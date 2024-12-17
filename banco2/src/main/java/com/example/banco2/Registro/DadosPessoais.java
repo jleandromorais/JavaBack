@@ -1,16 +1,14 @@
 package com.example.banco2.Registro;
 
 import com.fasterxml.jackson.annotation.JsonTypeId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.NonNull;
 
 import java.util.List;
 @Entity
+@Table(name="registro")
 public class DadosPessoais {
 
     @Id
@@ -28,7 +26,7 @@ public class DadosPessoais {
 
         private String tipoConta;  // Tipo de conta
         private String agencia;  // Número da agência
-        private String cartoes;  // Lista de cartões
+        private List<String> cartoes;  // Lista de cartões
         private String rua;  // Endereço
         private String numero;  // Número da residência
         private String complemento;  // Complemento
@@ -63,9 +61,6 @@ public class DadosPessoais {
             return id;
         }
 
-    public void setCartoes(String cartoes) {
-        this.cartoes = cartoes;
-    }
 
     public String getAgencia() {
         return agencia;
@@ -220,7 +215,12 @@ public class DadosPessoais {
     }
 // Getters and Setters
 
-    public String getCartoes() {
+
+    public List<String> getCartoes() {
         return cartoes;
+    }
+
+    public void setCartoes(List<String> cartoes) {
+        this.cartoes = cartoes;
     }
 }

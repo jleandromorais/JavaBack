@@ -45,7 +45,7 @@ public record ListaDeCadastro(
                               @NotNull
                               String agencia,  // Número da agência bancária
 
-                              String cartoes,  // Cartões desejados: débito, crédito, etc.
+        List<String> cartoes,  // Cartões desejados: débito, crédito, etc.
 
                               @NotNull
                               String rua,  // Endereço (rua)
