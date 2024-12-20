@@ -1,11 +1,11 @@
-package com.example.banco2.Cartoes;
+package com.example.banco2.CARTOES2;
 
 import jakarta.persistence.*;
+
 @Entity
-public class Cartoes {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Card {  @Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
 
     @Column(nullable = false)
     private String type; // "credit" ou "debit"
@@ -16,19 +16,18 @@ public class Cartoes {
     @Column(nullable = false)
     private String expiration; // Validade no formato "MM/AAAA"
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @Column(nullable = false)
+    private Long loggedUserId; // ID do usuário que criou o cartão
+
+    public Long getLoggedUserId() {
+        return loggedUserId;
+    }
+
+    public void setLoggedUserId(Long loggedUserId) {
+        this.loggedUserId = loggedUserId;
+    }
 
     // Getters e Setters
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public String getType() {
         return type;
     }
