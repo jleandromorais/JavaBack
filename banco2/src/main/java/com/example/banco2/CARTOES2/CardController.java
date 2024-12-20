@@ -47,13 +47,13 @@ public class CardController {
 
     @DeleteMapping("/{cardId}")
     public ResponseEntity<Void> deleteCard(@PathVariable Long cardId) {
+        System.out.println("ID do cartão recebido para exclusão: " + cardId); // Log do ID recebido
+
         boolean isDeleted = cardService.deleteCard(cardId);
 
         if (isDeleted) {
-            // Se o cartão foi deletado com sucesso, retorna 204 No Content (sem corpo)
             return ResponseEntity.noContent().build();
         } else {
-            // Se o cartão não foi encontrado ou não pôde ser deletado, retorna 404 Not Found
             return ResponseEntity.notFound().build();
         }
     }

@@ -37,15 +37,16 @@ public class CardService {
     }
 
     public boolean deleteCard(Long cardId) {
-        // Verifica se o cartão existe
-        Optional<Card> card = cardRepository.findById(cardId);
-
-        if (card.isPresent()) {
-            // Se o cartão existir, exclui
-            cardRepository.delete(card.get());
+        System.out.println("Tentando deletar o cartão com ID: " + cardId);
+        Optional<Card> cardOptional = cardRepository.findById(cardId);
+        if (cardOptional.isPresent()) {
+            cardRepository.deleteById(cardId);
+            System.out.println("Cartão deletado com sucesso.");
             return true;
+        } else {
+            System.out.println("Cartão não encontrado.");
+            return false;
         }
-        return false; // Retorna false se o cartão não for encontrado
     }
 }
 
