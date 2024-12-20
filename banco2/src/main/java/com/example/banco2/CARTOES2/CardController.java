@@ -1,6 +1,7 @@
 package com.example.banco2.CARTOES2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Map;
+
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/cards")
@@ -28,14 +30,15 @@ public class CardController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Card>> getAllCards(){
-        List<Card> cards =cardService.getAllCards();
-        if(cards.isEmpty()){
-            return  ResponseEntity.noContent().build();
+    public ResponseEntity<List<Card>> getAllCards() {
+        List<Card> cards = cardService.getAllCards();
+        if (cards.isEmpty()) {
+            return ResponseEntity.noContent().build();
 
         }
         return ResponseEntity.ok(cards);
     }
+
     @DeleteMapping("/{cardId}")
     public ResponseEntity<Void> deleteCard(@PathVariable Long cardId) {
         boolean isDeleted = cardService.deleteCard(cardId);
@@ -48,5 +51,5 @@ public class CardController {
             return ResponseEntity.notFound().build();
         }
     }
-
 }
+

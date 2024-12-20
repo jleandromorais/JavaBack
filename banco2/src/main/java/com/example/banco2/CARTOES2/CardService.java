@@ -8,18 +8,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+
 @Service
 public class CardService {
     @Autowired
     private CardRepository cardRepository;
 
-    public List<Card>  saveCards(Long loggedUserId,List<Map<String,String>>cards){
+    public List<Card> saveCards(Long loggedUserId, List<Map<String, String>> cards) {
 
 
-        List<Card> cardEntities=new ArrayList<>();
+        List<Card> cardEntities = new ArrayList<>();
 
-        for (Map<String,String> cardData:cards){
-            Card card=new Card();
+        for (Map<String, String> cardData : cards) {
+            Card card = new Card();
             card.setType(cardData.get("type"));
             card.setNumber(cardData.get("number"));
             card.setExpiration(cardData.get("expiration"));
@@ -30,9 +31,11 @@ public class CardService {
 
         return cardRepository.saveAll(cardEntities);
     }
+
     public List<Card> getAllCards() {
         return cardRepository.findAll();
     }
+
     public boolean deleteCard(Long cardId) {
         // Verifica se o cartão existe
         Optional<Card> card = cardRepository.findById(cardId);
@@ -44,5 +47,5 @@ public class CardService {
         }
         return false; // Retorna false se o cartão não for encontrado
     }
-
 }
+
