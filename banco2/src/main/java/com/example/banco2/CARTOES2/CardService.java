@@ -14,6 +14,8 @@ public class CardService {
     private CardRepository cardRepository;
 
     public List<Card>  saveCards(Long loggedUserId,List<Map<String,String>>cards){
+
+
         List<Card> cardEntities=new ArrayList<>();
 
         for (Map<String,String> cardData:cards){

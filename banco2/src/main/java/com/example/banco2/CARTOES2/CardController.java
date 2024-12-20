@@ -1,12 +1,14 @@
 package com.example.banco2.CARTOES2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Map;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/cards")
 public class CardController {
@@ -15,11 +17,16 @@ public class CardController {
 
     @PostMapping
     public List<Card> createCards(@RequestBody Map<String, Object> payload) {
-        Long loggedUserId = Long.valueOf((Integer) payload.get("loggedUserId"));
-        List<Map<String, String>> cards = (List<Map<String, String>>) ((Map<String, Object>) payload.get("allUsersCards")).get(String.valueOf(loggedUserId));
-
-        return cardService.saveCards(loggedUserId, cards);
+        try {
+            Long loggedUserId = Long.valueOf((Integer) payload.get("loggedUserId"));
+            List<Map<String, String>> cards = (List<Map<String, String>>) payload.get("cards");
+            return cardService.saveCards(loggedUserId, cards);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Erro ao criar cartões", e);
+        }
     }
+
     @GetMapping
     public ResponseEntity<List<Card>> getAllCards(){
         List<Card> cards =cardService.getAllCards();
