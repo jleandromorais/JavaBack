@@ -1,4 +1,6 @@
 package com.example.banco2.FluxoDeDinheiro;
 
-public interface ExtratoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ExtratoRepository extends JpaRepository<Extrato,Long> {
 }
