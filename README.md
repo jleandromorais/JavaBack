@@ -23,11 +23,4 @@ Este projeto é um sistema de **banco digital** completo, com diversas funcional
 1. Clone este repositório em sua máquina local:
    ```bash
    git clone https://github.com/seuusuario/banco-digital.git
-2. Navegue até o diretório do projeto:
-   cd banco-digital
-3.Compile o projeto:
 
-bash
-./mvnw clean install
-4.Inicie o servidor
-./mvnw spring-boot:run
