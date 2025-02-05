@@ -1,4 +1,4 @@
-package com.example.banco2.FluxoDeDinheiro;
+package com.example.banco2.Models;
 
 public class Transacao {
     private String descricao;

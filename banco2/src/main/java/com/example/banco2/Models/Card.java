@@ -1,4 +1,4 @@
-package com.example.banco2.CARTOES2;
+package com.example.banco2.Models;
 
 import jakarta.persistence.*;
 

@@ -1,5 +1,8 @@
-package com.example.banco2.CARTOES2;
+package com.example.banco2.Controller;
 
+import com.example.banco2.Models.Card;
+import com.example.banco2.Repository.CardRepository;
+import com.example.banco2.Service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpStatus;
@@ -17,7 +20,7 @@ public class CardController {
     @Autowired
     private CardService cardService;
     @Autowired
-    private  CardRepository cardRepository;
+    private CardRepository cardRepository;
 
     @PostMapping
     public List<Card> createCards(@RequestBody Map<String, Object> payload) {

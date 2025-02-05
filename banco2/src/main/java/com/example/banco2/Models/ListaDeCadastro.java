@@ -1,4 +1,4 @@
-package com.example.banco2.Registro;
+package com.example.banco2.Models;
 
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;

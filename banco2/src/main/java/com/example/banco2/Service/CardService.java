@@ -1,5 +1,7 @@
-package com.example.banco2.CARTOES2;
+package com.example.banco2.Service;
 
+import com.example.banco2.Models.Card;
+import com.example.banco2.Repository.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

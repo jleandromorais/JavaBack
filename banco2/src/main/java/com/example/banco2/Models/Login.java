@@ -1,4 +1,4 @@
-package com.example.banco2.Login;
+package com.example.banco2.Models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

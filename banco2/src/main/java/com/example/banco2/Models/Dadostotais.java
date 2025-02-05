@@ -1,4 +1,4 @@
-package com.example.banco2.Registro;
+package com.example.banco2.Models;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;

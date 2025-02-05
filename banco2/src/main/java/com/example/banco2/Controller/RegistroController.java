@@ -1,9 +1,12 @@
-package com.example.banco2.Registro;
+package com.example.banco2.Controller;
 
+import com.example.banco2.Models.DadosPessoais;
+import com.example.banco2.Models.Dadostotais;
+import com.example.banco2.Models.ListaDeCadastro;
+import com.example.banco2.Repository.RegistroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.HashMap;
@@ -18,7 +21,7 @@ public class RegistroController {
 
 
     @Autowired
-    private  RegistroRepository registroRepository;
+    private RegistroRepository registroRepository;
 @PostMapping
 public ResponseEntity<?> registro(@RequestBody Dadostotais dados, UriComponentsBuilder uriBuilder) {
     // Imprime os dados recebidos para verificar se estão corretos

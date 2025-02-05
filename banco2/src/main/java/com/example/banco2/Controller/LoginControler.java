@@ -1,9 +1,8 @@
-package com.example.banco2.Login;
+package com.example.banco2.Controller;
 
-import com.example.banco2.Registro.DadosPessoais;
-import com.example.banco2.Registro.RegistroRepository;
+import com.example.banco2.Models.DadosPessoais;
+import com.example.banco2.Repository.RegistroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

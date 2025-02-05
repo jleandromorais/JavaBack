@@ -1,5 +1,6 @@
-package com.example.banco2.Registro;
+package com.example.banco2.Repository;
 
+import com.example.banco2.Models.DadosPessoais;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RegistroRepository extends JpaRepository<DadosPessoais,Long> {

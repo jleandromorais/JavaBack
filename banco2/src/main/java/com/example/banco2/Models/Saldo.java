@@ -1,4 +1,4 @@
-package com.example.banco2.FluxoDeDinheiro;
+package com.example.banco2.Models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

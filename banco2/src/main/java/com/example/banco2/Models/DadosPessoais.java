@@ -1,10 +1,6 @@
-package com.example.banco2.Registro;
+package com.example.banco2.Models;
 
-import com.fasterxml.jackson.annotation.JsonTypeId;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-import lombok.NonNull;
 
 import java.util.List;
 @Entity
